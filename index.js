@@ -4,21 +4,18 @@ function isPalindrome(word) {
   The algorithm will involve removing spaces and special characters from the input string,
   converting the string to lowercase, and then comparing characters from the start and end of the string.
   */
-  word = word.toLowerCase().replace(/[^a-z]/g, '');
+const reversedWord = reverseString(word);
 
-  let left = 0;
-  let right = word.length - 1;
-  while (left < right) {
-    if (word[left] !== word[right]) {
-      return false;
-    }
-    left++;
-    right--;
-  }
-  return true;
-
+if (word === reversedWord) {
+  return true
+} else {
+  return false
+}
 }
 
+function reverseString(word) {
+  return word.split("").reverse().join("")
+}
 // Add your pseudocode here
  /*
   1. Remove any spaces or special characters from the input string.
